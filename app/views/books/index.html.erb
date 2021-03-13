@@ -1,0 +1,59 @@
+<!--<h1>Books#index</h1>-->
+<!--<p>Find me in app/views/books/index.html.erb</p>-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <style type="text/css">.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+} </style>
+  <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload">
+  <script src="/assets/application-4e370d3723b6f204426a9414077d365ea07814cce5619ae24fb7e581988f19ed.js" data-turbolinks-track="reload"></script>
+  <title>WebCampBackendNew</title>
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="yWABF4HwL4+ZYAok6sfVyhYv6LnFbyDLsWwc4Ab5wurPiaFW0oA121Tb3zN3DQKmmJekOtYcyjElN7uyM43A2w==">
+</head>
+
+<body>
+  <p id="notice"></p>
+  <h1>Books</h1>
+  <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>リーダブルコード</td>
+        <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
+        <td><a class="show_264067" href="/books/264067">Show</a></td>
+        <td><a class="edit_264067" href="/books/264067/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_264067" rel="nofollow" data-method="delete" href="/books/264067">Destroy</a></td>
+      </tr>
+  
+  </tbody>
+</table>
+
+<h2>New book</h2>
+<%=form_with model:@book,url:books_path,local:true do |f| %>
+  <h4>Title</h4>
+  <%=f.text_field :title %>
+  <h4>本文</h4>
+  <%=f.text_area :body %>
+  <%=f.submit 'Create Book' %>
+<% end %>
+
+</body>
+</html>

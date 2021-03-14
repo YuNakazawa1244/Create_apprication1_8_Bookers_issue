@@ -43,8 +43,7 @@
       <td>
       <a href="/books/:id">show</a>
       <a href="/books/:id/edit">edit</a>
-      <%=link_to"destroy",edit_book_path(@book.id),method::delete,"data-confirm" =>"本当に削除しますか？"%>
-      <!--<a href="/books/:id">destroy</a>-->
+      <%=link_to"destroy",books_path(@book),method: :delete,"data-confirm" =>"本当に削除しますか？"%>
       </td>
     </tr>
     <% end %>

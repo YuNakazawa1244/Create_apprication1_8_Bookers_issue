@@ -1,5 +1,9 @@
 <h1>Editing Book</h1>
 <%=form_with model:@book,local:true do |f| %>
+  <% if @book.errors.any? %>
+    <h4>There is an error,can't be blank</h4>
+  <% end %>
+
   <h4>Title</h4>
   <%=f.text_field :title %>
   <h4>Body</h4>
@@ -8,7 +12,6 @@
     <%=f.submit 'Update Book' %>
   </p>
 <% end %>
-
 
 <p>
   <!--<a href="book_path(book)">show</a>-->
